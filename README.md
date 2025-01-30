@@ -6,6 +6,10 @@ In this assignment, you will add a new system call to OS/161.
 ## Automated testing
 This repository tests the kernel automatically whenever new changes are pushed to the repository. To see the details of the tests, open the GitHub Actions tab and select the workflow of the test. The code passes the tests if a green checkmark (✔️) appears besides the label of the latest commit.
 
+
+:heavy_check_mark:
+
+
 **Important**: Configure the kernel using the configuration file `ASST3`, i.e.: 
 ```bash
 cd kern/conf/
