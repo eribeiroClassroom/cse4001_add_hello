@@ -94,7 +94,7 @@ syscall(struct trapframe *tf)
 	 * error. Since retval is the value returned on success,
 	 * initialize it to 0 by default; thus it's not necessary to
 	 * deal with it except for calls that return other values,
-	 * like write.
+	 * like  write.
 	 */
 
 	retval = 0;
@@ -108,6 +108,13 @@ syscall(struct trapframe *tf)
 		err = sys___time((userptr_t)tf->tf_a0,
 				 (userptr_t)tf->tf_a1);
 		break;
+
+		// Quick (and dirty) implementation of sys__exit()
+		case SYS__exit:
+			err = 0;
+			thread_exit();
+			break;
+
 
 	    /* Add stuff here */
 
