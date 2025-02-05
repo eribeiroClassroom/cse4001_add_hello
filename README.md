@@ -54,7 +54,7 @@ Information on how to use and build OS/161 for CSE4001:
 - https://github.com/eraldoribeiro/UsingCSE4001_OS161
 - https://github.com/eribeiroClassroom/notes_github/blob/main/README.md
 
-## The solution :)
+## The solution :smiley:
 
 
 ### Start the CSE4001 container, and clone the assignment repo
