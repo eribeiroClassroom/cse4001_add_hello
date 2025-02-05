@@ -12,10 +12,10 @@ echo $PATH
 
 echo "Configuring OS/161"
 cd kern/conf
-./config DUMBVM
+./config ASST3
 
 echo "Building OS/161 (Kernel-level)"
-cd ../compile/DUMBVM
+cd ../compile/ASST3
 /root/os161/tools/bin/bmake depend
 /root/os161/tools/bin/bmake
 
@@ -38,20 +38,12 @@ cd /github/workspace
 
 # Run the OS/161 kernel and save the output to a file
 cd /root/os161/root/
-/root/os161/tools/bin/sys161 kernel q > output.txt 
+/root/os161/tools/bin/sys161 kernel p testbin/hello > output.txt 
 cat output.txt
 
-the_string=$(grep "DUMBVM" "output.txt")
-string1=$(echo $the_string | grep -oP '.*(?=system version)')
-first_three=${string1:0:3}
-echo $first_three
-
-# Template string 
-string2="Put"
-
 # Test fails if no changes are detected 
-if [ "$first_three" = "$string2" ]; then
-  echo "Group-name string wasn't changed"
+if [ $(grep "Hello CSE4001" "output.txt") ]; then
+  echo "Unexpected output"
   exit 1
 else
   echo "Group-name string changed"
