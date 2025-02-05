@@ -115,5 +115,5 @@ Test the new system call by calling the test program using the operations-menu o
 p testbin/hello
 ```
 
-You should see the message *Hello CSE4001!*. But you might also see an error message because the OS cannot find `syscall 3`... This error occurs because the current version of the kernel does not have  the implementation of the `_exit` function, which is system call #3.
+You should see the message *Hello CSE4001!*. But you might also see an error message because the OS cannot find `syscall 3`... This error occurs when the current version of the kernel does not have  the implementation of the `_exit` function, which is system call #3.
 
