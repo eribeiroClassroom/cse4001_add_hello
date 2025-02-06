@@ -48,10 +48,10 @@ cd /github/workspace
 # cd /root/os161/root/
 # # /root/os161/tools/bin/sys161 kernel p testbin/hello > output.txt 
 # /root/os161/tools/bin/sys161 kernel q > output.txt 
-cat /root/os161/root/output.txt
+# cat /root/os161/root/output.txt
 
 # Test 
-# grep -q "Hello CSE4001" hello_steps.md && exit 0 || exit 1
+grep -q "Hello CSE4001" /root/os161/root/output.txt && exit 0 || exit 1
 
 
 # if [ $(grep "Hello CSE4001" "output.txt") ]; then
