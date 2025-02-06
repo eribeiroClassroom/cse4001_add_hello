@@ -1,5 +1,10 @@
 #!/bin/bash
 
+echo "Install pip in the container"
+apt update
+apt install python3-pip -y
+
+apt install expect -y
 
 ls ~/
 cd /github/workspace
