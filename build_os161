@@ -29,7 +29,7 @@ confName="${confPrefix}${assignNo}"
 
 
 # Full path of directory of the assignment repository
-path2repository=$2
+#path2repository=$2
 
 # Go to the student repository. 
 # cd $path2repository

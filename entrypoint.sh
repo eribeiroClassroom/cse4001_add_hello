@@ -22,7 +22,7 @@ export HOME="/root"
 
 
 echo "Building OS/161"
-./build_os161
+./build_os161 3
 
 
 # echo "Configuring OS/161"
