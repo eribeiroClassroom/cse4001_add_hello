@@ -41,10 +41,13 @@ cd /github/workspace
 cd /github/workspace
 /root/os161/tools/bin/bmake install
 
-# Run the OS/161 kernel and save the output to a file
-cd /root/os161/root/
-# /root/os161/tools/bin/sys161 kernel p testbin/hello > output.txt 
-/root/os161/tools/bin/sys161 kernel q > output.txt 
+# Run the OS/161 kernel with the hello program
+./expect_run_hello.exp 
+
+# # Run the OS/161 kernel and save the output to a file
+# cd /root/os161/root/
+# # /root/os161/tools/bin/sys161 kernel p testbin/hello > output.txt 
+# /root/os161/tools/bin/sys161 kernel q > output.txt 
 cat output.txt
 
 # Test 
