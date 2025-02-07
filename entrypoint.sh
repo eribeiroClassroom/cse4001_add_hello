@@ -30,15 +30,7 @@ echo "Building OS/161"
 grep -q "Hello CSE4001" /root/os161/root/output.txt && exit 0 || exit 1
 # grep -q "Operation took" /root/os161/root/output.txt && exit 0 || exit 1
 
-grep -q "SYS_HELLO" kern/arch/mips/syscall/syscall.c && exit 0 || exit 1
 
-# if [ $(grep "Hello CSE4001" "output.txt") ]; then
-#   echo "Unexpected output"
-#   exit 1
-# else
-#   echo "Group-name string changed"
-# fi
- 
 
 
 
