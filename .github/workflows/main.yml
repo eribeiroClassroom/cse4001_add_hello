@@ -16,7 +16,7 @@ jobs:
         with:
           test-name: Test OS/161 Hello World
           # setup-command: pip install -r requirements.txt
-          command: bash entrypoint.sh
+          command: ./entrypoint.sh
           timeout: 10        
           max-score: 100
       - name: Autograding Reporter
