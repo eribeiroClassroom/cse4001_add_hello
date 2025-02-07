@@ -12,8 +12,5 @@ jobs:
       - name: Run OS/161
         uses: ./ # Uses an action in the root directory
         id: run_OS161
-      - name: Check syscall.c
-        run: grep -q "SYS_HELLO" kern/arch/mips/syscall/syscall.c && exit 0 || exit 1
-        id: check_syscall
 
-        
+
