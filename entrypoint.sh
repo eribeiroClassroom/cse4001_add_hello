@@ -1,9 +1,8 @@
 #!/bin/bash
 
-echo "Install pip in the container"
+echo "Install pip and expect in the container"
 apt update
 apt install python3-pip -y
-
 apt install expect -y
 
 ls ~/
@@ -20,49 +19,16 @@ echo $PATH
 export HOME="/root"
 
 
-
 echo "Building OS/161"
+# Build OS/161 for assignment ASST3
 ./build_os161 3
-
-
-# echo "Configuring OS/161"
-# cd kern/conf
-# ./config ASST3
-
-# echo "Building OS/161 (Kernel-level)"
-# cd ../compile/ASST3
-# /root/os161/tools/bin/bmake depend
-# /root/os161/tools/bin/bmake
-
-# # Set (or re-set) the HOME variable otherwise 
-# # GitHub will set it to HOME = "/github/home/"
-# export HOME="/root"
-
-# /root/os161/tools/bin/bmake install
-
-# echo "List of files in the directory"
-# ls -l 
-
-# # Build OS/161 (Userland)
-# cd /github/workspace
-# /root/os161/tools/bin/bmake includes
-# cd /github/workspace
-# /root/os161/tools/bin/bmake
-# cd /github/workspace
-# /root/os161/tools/bin/bmake install
 
 # Run the OS/161 kernel with the hello program
 ./expect_run_hello.exp 
 
-# # Run the OS/161 kernel and save the output to a file
-# cd /root/os161/root/
-# # /root/os161/tools/bin/sys161 kernel p testbin/hello > output.txt 
-# /root/os161/tools/bin/sys161 kernel q > output.txt 
-# cat /root/os161/root/output.txt
-
 # Test 
-# grep -q "Hello CSE4001" /root/os161/root/output.txt && exit 0 || exit 1
-grep -q "Operation took" /root/os161/root/output.txt && exit 0 || exit 1
+grep -q "Hello CSE4001" /root/os161/root/output.txt && exit 0 || exit 1
+# grep -q "Operation took" /root/os161/root/output.txt && exit 0 || exit 1
 
 
 # if [ $(grep "Hello CSE4001" "output.txt") ]; then

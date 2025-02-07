@@ -108,9 +108,17 @@ To submit the assignment, you will `git commit` and `git push` the changes you m
 
 ### Only add source code to the repository 
 
-Try your best to only add source code to the repository. Avoid adding executable and object files. To do that, don't use `git add .` to add all files. Instead, add the few files that need to be added manually by calling `git add <filename>`. 
+#### Add files manually instead of using `git add .` for all files 
+Try your best to only add source code to the repository. Avoid adding executable and object files. Do not call  `git add .` to add all files. Instead, add files manually calling `git add <filename>`.
 
-In addition to adding only the necessary files, run `bmake clean` to remove some unnecessary files. Here, you will run `bmake clean` twice. First, you will run it from the top-level directory of the source code (to clean userland). Then, you will run `bmake clean` from inside `kern/compile/ASST<assignment-number>/`. 
+#### Clean up before committing
+In addition to adding only the necessary files, remove binary files. The script `cleanup_before_committing` does that for you. Just run it from inside the CSE4001 container before any commit is done, i.e.: 
+```shell
+./cleanup_before_committing
+```
+This script will run `bmake clean` for the kernel directories and also for the `userland` directories.
+
+run `bmake clean` to remove some unnecessary files. Here, you will run `bmake clean` twice. First, you will run it from the top-level directory of the source code (to clean userland). Then, you will run `bmake clean` from inside `kern/compile/ASST<assignment-number>/`. 
 
 
 
