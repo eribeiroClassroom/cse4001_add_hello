@@ -12,17 +12,8 @@ jobs:
       - name: Run OS/161
         uses: ./ # Uses an action in the root directory
         id: run_OS161
-      - name: Check syscall (syscall handler)
+      - name: Check syscall.c
+        run: grep -q "SYS_HELLO" kern/arch/mips/syscall/syscall.c && exit 0 || exit 1
         id: check_syscall
-        uses: classroom-resources/autograding-command-grader@v1
-        with:
-          test-name: Test syscall.c
-          command: grep -q "SYS_HELLO" kern/arch/mips/syscall/syscall.c && exit 0 || exit 1
-          timeout: 10          
-          max-score: 10
-      - name: Autograding Reporter
-        uses: classroom-resources/autograding-grading-reporter@v1
-        env:
-          CHECK_SYSCALL_RESULTS: "${{steps.check_syscall.outputs.result}}"
-        with:
-          runners: check_syscall
+
+        
