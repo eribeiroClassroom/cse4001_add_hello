@@ -10,18 +10,5 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Run OS/161
-        # uses: ./ # Uses an action in the root directory
+        uses: ./ # Uses an action in the root directory
         id: run_OS161
-        uses: classroom-resources/autograding-command-grader@v1
-        with:
-          test-name: Test OS/161 Hello World
-          # setup-command: pip install -r requirements.txt
-          command: ./entrypoint.sh
-          timeout: 10        
-          max-score: 100
-      - name: Autograding Reporter
-      uses: classroom-resources/autograding-grading-reporter@v1
-      env:
-        RUN_OS161_RESULTS: "${{steps.run_OS161.outputs.result}}"
-      with:
-        runners: run_OS161
